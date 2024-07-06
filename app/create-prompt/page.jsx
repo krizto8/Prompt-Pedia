@@ -24,8 +24,8 @@ const CreatePrompt = () => {
                 method: "POST",
                 body: JSON.stringify({
                     prompt: post.prompt,
-                    tag: post.tag,
                     userId: session?.user.id,
+                    tag: post.tag,
                 }),
 
             });
@@ -33,9 +33,8 @@ const CreatePrompt = () => {
             if (response.ok) {
                 router.push('/');
             }
-            }
- catch (error) {
-    console.log(error);
+            } catch (error) {
+               console.log(error);
 
         } finally {
             setSubmitting(false);
